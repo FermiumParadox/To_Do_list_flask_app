@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="todo-wrapper">
+    <div style="text-align: right;">
+        <a href="/logout" class="btn delete">Logout</a>
+    </div>
+    <h1>Todo List 🚀</h1>
+
+    <div class="progress-section">
+        <p><strong>{{ completed }} / {{ total }} completed</strong></p>
+
+        <div style="background: #ddd; border-radius: 5px; height: 10px;">
+            <div style="
+            background: #4CAF50;
+            width: {{ (completed / total * 100) if total > 0 else 0 }}%;
+            height: 10px;
+            border-radius: 5px;
+        ">
+            </div>
+        </div>
+    </div>
+
+    <form method="POST">
+        <input type="text" name="content" placeholder="Enter a task..." required>
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <div>
+                {% if task.completed %}
+                <span style="text-decoration: line-through; color: gray;">
+                    {{ task.content }}
+                </span>
+                {% else %}
+                {{ task.content }}
+                {% endif %}
+            </div>
+
+            <div class="actions">
+                <a href="/toggle/{{ task.id }}" class="btn complete">✔</a>
+                <a href="/edit/{{ task.id }}" class="btn edit">✏</a>
+                <a href="/delete/{{ task.id }}" class="btn delete">✖</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="todo-wrapper">
+    <h1>Edit Task ✏️</h1>
+
+    <form method="POST">
+        <input type="text" name="content" value="{{ task.content }}" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <div class="auth-link">
+        <a href="/">⬅ Back</a>
+    </div>
+</div>
+{% endblock %}
