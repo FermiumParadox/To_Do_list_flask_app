@@ -30,9 +30,10 @@ A clean and modern Todo List web application built with Flask, featuring authent
 
 ### 🏠 Todo Dashboard
 
-![Home Page](app/static/preview.png)
-![Edit Cafe](app/static/update_To_Do.png)
-![Add Delete](app/static/add_delete_To_Do.png)
+![Login Page](app/static/preview.png)
+![Home page](app/static/add_delete_To_Do.png)
+![Edit Page](app/static/update_To_Do.png)
+
 
 ## ⚙️ Installation
 
